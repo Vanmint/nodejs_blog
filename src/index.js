@@ -15,9 +15,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('combined'));
 
 // Midderware để xử lý dữ liệu form data
-                app.use(
+app.use(
   express.urlencoded({
-              extended: true,
+    extended: true,
   }),
 );
 
