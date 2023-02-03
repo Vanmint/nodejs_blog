@@ -38,6 +38,7 @@
   "devDependencies": {
     "husky": "^4.2.5",
     "lint-staged": "^13.1.0",
+    "mongoose": "^6.9.0",
     "morgan": "^1.10.0",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.20",
