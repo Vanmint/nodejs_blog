@@ -35,6 +35,13 @@ class CourseController {
       .catch(next);
   }
 
+  // [DELETE] /courses/:id
+  destroy(req, res, next) {
+    Course.deleteOne({ _id: req.params.id })
+      .then(() => res.redirect('back'))
+      .catch(next);
+  }
+
   // [POST] /course/store
   store(req, res, next) {
     const formData = req.body;

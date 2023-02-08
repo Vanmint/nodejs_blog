@@ -7,6 +7,8 @@ const { engine } = require('express-handlebars');
 const app = express();
 const port = 3000;
 
+app.use(methodOverride('_method'));
+
 const route = require('./routes');
 
 const db = require('./config/db');
@@ -30,8 +32,6 @@ app.use(
 
 // xử lý dữ liệu từ code js lên (sử dụng XMLHttpRequest, fetch, axios, ...)
 app.use(express.json());
-
-app.use(methodOverride('_method'));
 
 // Template engine
 app.engine(
