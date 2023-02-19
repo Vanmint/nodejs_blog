@@ -5,7 +5,7 @@
 }
 
 h1 {
-  color: $red-color;
+  color: white;
 }
 
 .card-course-item {
@@ -26,4 +26,25 @@ a {
 .checkbox-select-all {
   width: 160px;
   margin: 0 16px;
+}
+
+.card-text {
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+.card-title {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.footer__bottm {
+  padding: 16px 0;
+  background-color: #f5f5f5;
+  margin-top: 36px;
 }

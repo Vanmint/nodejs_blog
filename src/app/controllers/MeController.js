@@ -4,9 +4,15 @@ const { mutipleMongooesToObject } = require('../../until/mongooes');
 class MeController {
   // [GET] /me/stored/courses
   storedCourses(req, res, next) {
-    // Sử dụng promise.all để gộp 2 promise với nhau và chạy đồng thời
+    let courseQuery = Course.find({});
+    if (req.query.hasOwnProperty('_sort')) {
+      courseQuery = courseQuery.sort({
+        [req.query.column]: req.query.type,
+      });
+    }
 
-    Promise.all([Course.find({}), Course.countDocumentsDeleted()])
+    // Sử dụng promise.all để gộp 2 promise với nhau và chạy đồng thời
+    Promise.all([courseQuery, Course.countDocumentsDeleted()])
       .then(([courses, deleteCount]) =>
         res.render('me/stored-courses', {
           deleteCount,
